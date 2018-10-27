@@ -84,6 +84,7 @@ void display()
 void desired()
 {
 	int pos,i;
+	
 	int item,data;
 	struct node *new_node,*temp;
 
@@ -95,26 +96,29 @@ void desired()
 	{
 		new_node=(struct node*)malloc(sizeof(struct node));
 	}
-	printf("enter data to be added at desired : ");
-	scanf("%d",&item);
-	new_node->data=item;
-	
 	if(start==NULL)
 	{
 		start=new_node;
 		new_node->next=NULL;
 	}
+	printf("enter data to be added at desired : ");
+	scanf("%d",&item);
+	new_node->data=item;
+	
+	
+
 	
 	printf("enter the location of data : ");
 	scanf("%d",&pos);
 	temp = start;
+	pos = pos - 1;
 	for(i=0;i<pos;i++)
 	{	
 		temp = temp->next;
-		i=i+1;
+		
+	}
 		new_node->next=temp->next;
 		temp->next=new_node;
-	}
 }
 
 int main()
